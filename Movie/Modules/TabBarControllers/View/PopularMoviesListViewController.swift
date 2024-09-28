@@ -7,23 +7,50 @@
 
 import UIKit
 
-class PopularMoviesListViewController: UIViewController {
-
+class PopularMoviesListViewController: UIViewController, UICollectionViewDelegate {
+    
+    var collectionView : UICollectionView!
+    var moviesListViewModel = MoviesListViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureCollectionView()
+        
+        moviesListViewModel.fetchMoviesList(currentTab: "popular")
+        moviesListViewModel.reloadCollectionView = { [weak self] in
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
+        }
+        moviesListViewModel.showError = { [weak self] errorMessage in
+            DispatchQueue.main.async {
+                self?.presentErrorAlert(message: errorMessage)
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureCollectionView() {
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createTwoColumnFlowLayout(in: view))
+        view.addSubview(collectionView)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = .systemGray6
+        collectionView.register(MovieCell.self, forCellWithReuseIdentifier: "MovieCell")
     }
-    */
-
+    
 }
+//MARK: - UICollectionViewDataSource
+extension PopularMoviesListViewController: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return moviesListViewModel.numberOfMovies()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath) as! MovieCell
+        let movie = moviesListViewModel.movie(at: indexPath.item)
+        cell.set(with: movie)
+        
+        return cell
+    }
+}
+

@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createNowPlayingMoviesNC() -> UINavigationController{
         let nowPlayingMoviesVC = NowPlayingMoviesListViewController()
         nowPlayingMoviesVC.title = "Now Playing"
-        nowPlayingMoviesVC.tabBarItem = UITabBarItem(title: "Now Playing", image: UIImage(systemName: "play.fill"), tag: 0)
+        nowPlayingMoviesVC.tabBarItem = UITabBarItem(title: "Now Playing", image: UIImage(systemName: "play.square.stack.fill"), tag: 0)
         
         return UINavigationController(rootViewController: nowPlayingMoviesVC)
     }
@@ -34,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createPopularMoviesNC() -> UINavigationController{
         let popularMoviesNC = PopularMoviesListViewController()
         popularMoviesNC.title = "Popular"
-        popularMoviesNC.tabBarItem = UITabBarItem(title: "Popular", image: UIImage(systemName: "bolt.fill"), tag: 1)
+        popularMoviesNC.tabBarItem = UITabBarItem(title: "Popular", image: UIImage(systemName: "popcorn.fill"), tag: 1)
         
         return UINavigationController(rootViewController: popularMoviesNC)
     }
@@ -49,7 +49,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func createTabbar() -> UITabBarController{
         let tabbar = UITabBarController()
-        tabbar.tabBar.tintColor = .systemTeal
+        tabbar.tabBar.tintColor = .black
         tabbar.viewControllers = [createNowPlayingMoviesNC(), createPopularMoviesNC(), createUpcomingMoviesNC()]
         
         return tabbar

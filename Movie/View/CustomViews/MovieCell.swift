@@ -14,10 +14,11 @@ class MovieCell: UICollectionViewCell {
     
     let movieImageView = customMovieImageView(frame: .zero)
     let movieNameLabel = customTitleLabel(textAlignment: .center, fontSize: 14)
-    let movieRelaseDateLabel = customSecondaryLabel(fontSize: 12,textAlignment: .center)
+    let movieRelaseDateLabel = customSecondaryLabel(fontSize: 12, textAlignment: .center)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configureCell()
         configureMovieImageView()
         configureMovieNameLabel()
         configureMovieReleaseDateLabel()
@@ -27,7 +28,7 @@ class MovieCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(with movie: Movie){
+    func set(with movie: Movie) {
         if let posterPath = movie.posterPath {
             imageViewModel.getMovieImage(posterPath: posterPath) { image in
                 DispatchQueue.main.async {
@@ -39,9 +40,18 @@ class MovieCell: UICollectionViewCell {
         movieRelaseDateLabel.text = movie.releaseDate
     }
     
+    // Configure the cell to round the corners
+    private func configureCell() {
+        layer.cornerRadius = 20
+        clipsToBounds = true
+        backgroundColor = .white
+    }
     
     private func configureMovieImageView() {
         addSubview(movieImageView)
+        movieImageView.layer.cornerRadius = self.frame.width / 2.5
+        movieImageView.clipsToBounds = true
+        movieImageView.contentMode = .scaleAspectFill
         
         NSLayoutConstraint.activate([
             movieImageView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
