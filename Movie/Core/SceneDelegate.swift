@@ -7,16 +7,52 @@
 
 import UIKit
 
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        window?.rootViewController = createTabbar()
+        window?.makeKeyAndVisible()
+    }
+    
+    func createNowPlayingMoviesNC() -> UINavigationController{
+        let nowPlayingMoviesVC = NowPlayingMoviesListViewController()
+        nowPlayingMoviesVC.title = "Now Playing"
+        nowPlayingMoviesVC.tabBarItem = UITabBarItem(title: "Now Playing", image: UIImage(systemName: "play.fill"), tag: 0)
+        
+        return UINavigationController(rootViewController: nowPlayingMoviesVC)
+    }
+    
+    func createPopularMoviesNC() -> UINavigationController{
+        let popularMoviesNC = PopularMoviesListViewController()
+        popularMoviesNC.title = "Popular"
+        popularMoviesNC.tabBarItem = UITabBarItem(title: "Popular", image: UIImage(systemName: "bolt.fill"), tag: 1)
+        
+        return UINavigationController(rootViewController: popularMoviesNC)
+    }
+    
+    func createUpcomingMoviesNC() -> UINavigationController{
+        let upcomingMoviesNC = UpcomingMoviesListViewController()
+        upcomingMoviesNC.title = "Upcoming"
+        upcomingMoviesNC.tabBarItem = UITabBarItem(title: "Upcoming", image: UIImage(systemName: "text.insert"), tag: 2)
+        
+        return UINavigationController(rootViewController: upcomingMoviesNC)
+    }
+    
+    func createTabbar() -> UITabBarController{
+        let tabbar = UITabBarController()
+        tabbar.tabBar.tintColor = .systemTeal
+        tabbar.viewControllers = [createNowPlayingMoviesNC(), createPopularMoviesNC(), createUpcomingMoviesNC()]
+        
+        return tabbar
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
