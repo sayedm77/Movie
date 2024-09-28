@@ -32,6 +32,7 @@
 		3BF864252CA86EC100EF9987 /* customBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF864242CA86EC100EF9987 /* customBodyLabel.swift */; };
 		3BF864272CA86EF900EF9987 /* customSecondaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF864262CA86EF900EF9987 /* customSecondaryLabel.swift */; };
 		3BF864292CA86F2E00EF9987 /* customMovieImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF864282CA86F2E00EF9987 /* customMovieImageView.swift */; };
+		3BF8642B2CA870B900EF9987 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8642A2CA870B900EF9987 /* CustomAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		3BF864242CA86EC100EF9987 /* customBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customBodyLabel.swift; sourceTree = "<group>"; };
 		3BF864262CA86EF900EF9987 /* customSecondaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customSecondaryLabel.swift; sourceTree = "<group>"; };
 		3BF864282CA86F2E00EF9987 /* customMovieImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customMovieImageView.swift; sourceTree = "<group>"; };
+		3BF8642A2CA870B900EF9987 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +283,7 @@
 				3BF8641F2CA86D5E00EF9987 /* Labels */,
 				3BF864202CA86E4300EF9987 /* MovieCell.swift */,
 				3BF864282CA86F2E00EF9987 /* customMovieImageView.swift */,
+				3BF8642A2CA870B900EF9987 /* CustomAlert.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				3BF864232CA86E7C00EF9987 /* customTitleLabel.swift in Sources */,
 				3BF864252CA86EC100EF9987 /* customBodyLabel.swift in Sources */,
 				3BF863CE2CA865BA00EF9987 /* SceneDelegate.swift in Sources */,
+				3BF8642B2CA870B900EF9987 /* CustomAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
