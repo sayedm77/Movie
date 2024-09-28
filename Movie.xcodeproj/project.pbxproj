@@ -27,6 +27,11 @@
 		3BF864192CA86B8700EF9987 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF864182CA86B8700EF9987 /* MovieService.swift */; };
 		3BF8641B2CA86BB700EF9987 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8641A2CA86BB700EF9987 /* Movie.swift */; };
 		3BF8641D2CA86BDD00EF9987 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8641C2CA86BDD00EF9987 /* MovieDetails.swift */; };
+		3BF864212CA86E4300EF9987 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF864202CA86E4300EF9987 /* MovieCell.swift */; };
+		3BF864232CA86E7C00EF9987 /* customTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF864222CA86E7C00EF9987 /* customTitleLabel.swift */; };
+		3BF864252CA86EC100EF9987 /* customBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF864242CA86EC100EF9987 /* customBodyLabel.swift */; };
+		3BF864272CA86EF900EF9987 /* customSecondaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF864262CA86EF900EF9987 /* customSecondaryLabel.swift */; };
+		3BF864292CA86F2E00EF9987 /* customMovieImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF864282CA86F2E00EF9987 /* customMovieImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +76,11 @@
 		3BF864182CA86B8700EF9987 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		3BF8641A2CA86BB700EF9987 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		3BF8641C2CA86BDD00EF9987 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
+		3BF864202CA86E4300EF9987 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		3BF864222CA86E7C00EF9987 /* customTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTitleLabel.swift; sourceTree = "<group>"; };
+		3BF864242CA86EC100EF9987 /* customBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customBodyLabel.swift; sourceTree = "<group>"; };
+		3BF864262CA86EF900EF9987 /* customSecondaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customSecondaryLabel.swift; sourceTree = "<group>"; };
+		3BF864282CA86F2E00EF9987 /* customMovieImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customMovieImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +171,7 @@
 		3BF863FC2CA8668B00EF9987 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3BF8641E2CA86D5500EF9987 /* CustomViews */,
 				3BF863CF2CA865BA00EF9987 /* ViewController.swift */,
 				3BF863D62CA865BC00EF9987 /* LaunchScreen.storyboard */,
 				3BF863D12CA865BA00EF9987 /* Main.storyboard */,
@@ -262,6 +273,26 @@
 				3BF864162CA86B4F00EF9987 /* UIHelper.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3BF8641E2CA86D5500EF9987 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				3BF8641F2CA86D5E00EF9987 /* Labels */,
+				3BF864202CA86E4300EF9987 /* MovieCell.swift */,
+				3BF864282CA86F2E00EF9987 /* customMovieImageView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		3BF8641F2CA86D5E00EF9987 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				3BF864222CA86E7C00EF9987 /* customTitleLabel.swift */,
+				3BF864242CA86EC100EF9987 /* customBodyLabel.swift */,
+				3BF864262CA86EF900EF9987 /* customSecondaryLabel.swift */,
+			);
+			path = Labels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,14 +431,19 @@
 				3BF8640A2CA8692F00EF9987 /* PopularMoviesListViewController.swift in Sources */,
 				3BF864152CA86B2D00EF9987 /* ErrorMessage.swift in Sources */,
 				3BF864172CA86B4F00EF9987 /* UIHelper.swift in Sources */,
+				3BF864292CA86F2E00EF9987 /* customMovieImageView.swift in Sources */,
 				3BF8640C2CA8695800EF9987 /* UpcomingMoviesListViewController.swift in Sources */,
+				3BF864272CA86EF900EF9987 /* customSecondaryLabel.swift in Sources */,
 				3BF864122CA86AF300EF9987 /* MoviesListViewModel.swift in Sources */,
 				3BF864192CA86B8700EF9987 /* MovieService.swift in Sources */,
+				3BF864212CA86E4300EF9987 /* MovieCell.swift in Sources */,
 				3BF863D02CA865BA00EF9987 /* ViewController.swift in Sources */,
 				3BF8641B2CA86BB700EF9987 /* Movie.swift in Sources */,
 				3BF8640E2CA86AAD00EF9987 /* MovieDetailsViewController.swift in Sources */,
 				3BF864082CA8691C00EF9987 /* NowPlayingMoviesListViewController.swift in Sources */,
 				3BF863CC2CA865BA00EF9987 /* AppDelegate.swift in Sources */,
+				3BF864232CA86E7C00EF9987 /* customTitleLabel.swift in Sources */,
+				3BF864252CA86EC100EF9987 /* customBodyLabel.swift in Sources */,
 				3BF863CE2CA865BA00EF9987 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
