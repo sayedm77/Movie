@@ -21,7 +21,7 @@ class MovieServiceTests: XCTestCase {
         }
     }
     
-
+    
     
     func testGetMovieDetailsWithValidData(){
         MovieService.shared.getMovieDetails(for: 12345) { result in
