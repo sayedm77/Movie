@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import banquemisr_challenge05_Movie
+@testable import banquemisr_challenge05
 
 final class MovieTests: XCTestCase {
 

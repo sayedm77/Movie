@@ -52,5 +52,17 @@ extension PopularMoviesListViewController: UICollectionViewDataSource{
         
         return cell
     }
+    
+//MARK: - UIcollectionViewDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let movieId = moviesListViewModel.didSelectMovie(at: indexPath.item) else { return }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let movieDetailsViewModel = MovieDetailsViewModel(with: movieId)
+        let movieDetailsVC = storyboard.instantiateViewController(withIdentifier: "movieDetails") as! MovieDetailsViewController
+        movieDetailsVC.movieDetailsViewModel = movieDetailsViewModel
+        movieDetailsVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(movieDetailsVC, animated: true)
+    }
 }
 
