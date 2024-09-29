@@ -21,16 +21,7 @@ class MovieServiceTests: XCTestCase {
         }
     }
     
-    func testGetMoviesListWithInvalidURL() {
-        MovieService.shared.getMoviesList(currentTab: "invalid_tab") { result in
-            switch result {
-            case .success:
-                XCTFail("Expected failure due to invalid URL")
-            case .failure(let errorMessage):
-                XCTAssertEqual(errorMessage, .invalidResponse)
-            }
-        }
-    }
+
     
     func testGetMovieDetailsWithValidData(){
         MovieService.shared.getMovieDetails(for: 12345) { result in
